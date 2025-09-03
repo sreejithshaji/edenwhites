@@ -1,0 +1,292 @@
+/* Define color variables */
+:root {
+    --background-green: rgb(37, 40, 37);
+    --text-blue: #d16666;
+    --input-background: #efefef;
+    
+    --button-hover: #188322;
+    --button-default: #ccc;
+}
+
+
+.cartContent {
+    width: 85%;
+    min-width: 300px;
+    /* background: white; */
+    margin: 0 auto;
+    padding: 15px;
+}
+.cart-wrapper {
+    border-bottom: 1.25px solid var(--text-blue);
+}
+.cart-item {
+    display: flex; /* Change from grid to flex */
+    flex-direction: row; /* Ensure items are in a single row */
+    align-items: center;
+    gap: 10px;
+    background-color: var(--background-green); /* Use variable */
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+.cart-item-cell {
+    flex: 1; /* Allow cells to take equal space */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--background-green); /* Use variable */
+}
+.cart-item-cell.header {
+    grid-row: span 1;
+    grid-column: 1 / span 2;
+    background-color: var(--background-green); /* Use variable */
+}
+.cart-item-cell.body {
+    flex: 2; 
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    gap: 10px; /* Add spacing between buttons and input */
+    background-color: var(--background-green); /* Use variable */
+}
+.cart-item-cell.body p {
+    margin: 0; /* Remove any default margin */
+    text-align: center; /* Center text */
+}s
+.cart-item-cell.body.price {
+    font-size: 80%;
+    color: var(--text-blue); /* Use variable */
+    background-color: var(--background-green); /* Use variable */
+}
+.cart-item-cell.body input {
+    height: 25px;
+    max-width: 75px;
+    border: 0pt transparent;
+    border-radius: 25px;
+    background-color: var(--input-background); /* Use variable */
+    outline: 0;
+    padding: 5px;
+    margin: 5px;
+    text-align: center;
+}
+.cart-item-cell.body input[type=number]::-webkit-inner-spin-button, 
+.cart-item-cell.body input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none; 
+    margin: 0; 
+}
+
+
+/* .cart-item-cell.price {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-row: span 1;
+    grid-column: 3 / span 1;
+    justify-content: flex-end;
+    background-color: var(--background-green); 
+} */
+
+.cart-item-cell.side {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-row: span 1;
+    grid-column: 3 / span 1;
+    justify-content: flex-end;
+    background-color: var(--background-green); 
+}
+.cart-item-cell.indent {
+    grid-row: span 1;
+    grid-column: span 1;
+    background-color: var(--background-green); /* Use variable */
+}
+.cart-item-cell.image {
+    flex: 0 0 auto; /* Prevent image from stretching */
+    display: flex;
+    flex-direction: column; /* Stack image and name vertically */
+    align-items: center;
+    text-align: center;
+    background-color: var(--background-green); /* Use variable */
+}
+.cart-item-cell.image img {
+    width: 120px;
+    height: 120px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+.cart-total {
+    display: flex; /* Make the parent a flex container */
+    justify-content:center;  
+    align-items: center; /* Center items vertically */
+    padding: 10px; /* Add some padding for better spacing */
+    gap: 20px; 
+    text-align: center;
+    margin: 20px 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+    background-color: var(--background-green); /* Use variable */
+}
+
+
+.cart-whatsapp {
+    /* display: flex;   */
+    /* justify-content: flex-end;   */
+    justify-content:center; 
+    align-items: center; /* Center items vertically */
+    padding: 10px; /* Add some padding for better spacing */
+    gap: 20px; 
+    text-align: center;
+    margin: 20px 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+    background-color: var(--background-green); /* Use variable */
+}
+
+.cart-total .total-price p {
+    margin: 0;
+    font-size: 1.2rem;
+    color: red; /* Change color to red */
+}
+.cart-item-cell.price {
+    flex: 1; /* Adjust flex value to control width */
+    text-align: center;
+    font-weight: bold;
+    color: var(--text-blue); /* Use variable */
+}
+.cart-item-cell.total {
+    text-align: center;
+    font-weight: bold;
+    color: var(--text-blue); /* Optional: Use a color variable */
+}
+@media only screen and (min-width: 1000px) {
+    #cartContent {
+        min-width: 500px;
+    }
+}
+.cart-controls {
+    width: 34px;
+    height: 34px;
+    margin: 5px;
+    border: 0pt transparent;
+    border-radius: 50%;
+    background-color: var(--button-default); /* Use variable */
+    outline: 0;
+    cursor: pointer;
+    transition: all .2s ease;
+}
+.cart-controls:hover {
+    background-color: var(--button-hover); /* Use variable */
+}
+.cart-controls svg {
+    width: 17px;
+    height: 17px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+/* Add media query for mobile devices */
+@media only screen and (max-width: 768px) {
+    .cart-item {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+        align-items: center; /* Center align all items */
+        gap: 15px; /* Increase gap for better spacing */
+        text-align: center; /* Center text */
+    }
+
+    .cart-item-cell {
+        flex: none; /* Allow cells to take their natural size */
+        width: 100%; /* Make cells take full width */
+        justify-content: center; /* Center content horizontally */
+        text-align: center; /* Center text */
+    }
+
+    .cart-item-cell.image {
+        flex: none;
+        width: 100%; /* Make the image container take full width */
+        text-align: center; /* Center the image */
+    }
+
+    .cart-item-cell.image img {
+        width: 100%; /* Make the image take full width of its container */
+        height: 200px; /* Maintain aspect ratio */
+        border-radius: 5px; /* Optional: Keep the border-radius for styling */
+        object-fit: cover; /* Ensure the image covers the container */
+    }
+
+    .cart-item-cell.body {
+        flex: none;
+        width: 100%; /* Ensure body content takes full width */
+        gap: 10px; /* Maintain spacing between elements */
+        justify-content: center; /* Center content horizontally */
+    }
+
+    .cart-item-cell.price-delete {
+        flex-direction: column; /* Stack price and delete button vertically */
+        justify-content: center; /* Center content */
+        align-items: center; /* Center align items */
+        gap: 10px; /* Add spacing between price and delete button */
+    }
+
+    .cart-controls {
+        margin: 0 auto; /* Center controls on smaller screens */
+    }
+}
+
+.submit-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--button-hover); /* Use your hover color variable */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    align-self: flex-end; /* Align button to the right */
+}
+
+.submit-button:hover {
+    background-color: var(--text-blue); /* Use your text color variable */
+}
+
+.total-center {
+    font-size: 14px;
+    color : var(--text-blue); 
+    text-align: center; /* Align text to the right */
+    margin-left: auto; /* Push the element to the right in a flex container */
+    display: block; /* Ensure it behaves as a block element */
+}
+
+/* Ensure the parent container is a flexbox */
+.total-price {
+    display: flex;
+    justify-content: flex-end; /* Align children to the right */
+    align-items: center;
+}
+
+/* CartNew.module.css */
+.submit-button {
+    /* Existing styles */
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    background-color: --text-blue;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* Add bottom margin for mobile screens */
+@media (max-width: 768px) {
+    /* .submit-button {
+        margin-bottom: 50px;
+    } */
+    .submit-button {
+        display: block; /* Ensure it behaves as a block element */
+        margin: 0 auto; /* Center the button horizontally */
+        
+    }
+    .cart-whatsapp {
+        margin-bottom: 50px;
+    }
+}
