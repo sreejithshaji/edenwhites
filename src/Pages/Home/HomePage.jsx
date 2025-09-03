@@ -59,6 +59,7 @@ const HomePage = () => {
                         flexGrow: 1, flexWrap: 'wrap', gap: 20
                     }}
                 >
+
                     {
                         mockData.map(data => (
                             <CategoryCard data={data} key={data.items[0].img} />
@@ -66,7 +67,6 @@ const HomePage = () => {
                     }
                 </Container>
             </Container >
-            {/* Responsive Instagram Profile Embed */}
             <InstagramFeed />
             <CopyRight sx={{ mt: 8, mb: 10 }} />
         </ >
