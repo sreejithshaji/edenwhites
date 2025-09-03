@@ -66,7 +66,6 @@ const HomePage = () => {
                     }
                 </Container>
             </Container >
-            {/* Responsive Instagram Profile Embed */}
             <InstagramFeed />
             <CopyRight sx={{ mt: 8, mb: 10 }} />
         </ >
