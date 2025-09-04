@@ -10,7 +10,7 @@
 
 .insta-embed-wrapper {
     position: relative;
-    width: 100%;
+    width: 90%;
     max-width: 400px;
     background: #232323;
     border-radius: 16px;
@@ -22,7 +22,7 @@
 
 .insta-embed-iframe {
     width: 100%;
-    height: 480px;
+    height: 350px;
     border-radius: 12px;
     border: none;
     box-shadow: 0 2px 16px rgba(0, 0, 0, 0.16);
@@ -34,10 +34,11 @@
 @media (min-width: 600px) {
     .insta-embed-wrapper {
         max-width: 600px !important;
+
     }
 
     .insta-embed-iframe {
-        height: 600px !important;
+        height: 400px !important;
     }
 }
 
@@ -47,6 +48,6 @@
     }
 
     .insta-embed-iframe {
-        height: 800px !important;
+        height: 500px !important;
     }
 }

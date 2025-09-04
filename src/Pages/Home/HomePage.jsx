@@ -11,7 +11,9 @@ import SearchBar from '../../Components/SearchBar/SearchBar'
 import CopyRight from '../../Components/CopyRight/CopyRight'
 import CategoryHeading from './/CategoryHeading/CategoryHeading'
 import mockData from '../../Constants/products'
+import styles from './HomePage.module.css';
 import InstagramFeed from '../../Components/InstagramFeed/InstagramFeed'
+import WelcomeCard from '../../Components/WelcomeCard/WelcomeCard'
 const HomePage = () => {
     const { setCart } = useContext(ContextFunction)
     let authToken = localStorage.getItem('Authorization')
@@ -50,7 +52,16 @@ const HomePage = () => {
                 <Box padding={1}>
                     <Carousel />
                 </Box>
-                <CategoryHeading />
+
+                <div style={{ marginTop: 20 }} >
+                    <WelcomeCard />
+                </div>
+
+                {/* give a heading named our categories  */}
+                <Typography variant="h4" align="center" gutterBottom style={{ color: 'red', marginTop: 20 }}>
+                    Our Categories
+                </Typography>
+
                 <Container
                     maxWidth='xl'
                     style={{
@@ -59,17 +70,16 @@ const HomePage = () => {
                         flexGrow: 1, flexWrap: 'wrap', gap: 20
                     }}
                 >
-
                     {
                         mockData.map(data => (
-                            <CategoryCard data={data} key={data.items[0].img} />
+                            <CategoryCard id={data.id} name={data.name} img={data.items[0].img[0]} key={data.items[0].img} />
                         ))
                     }
                 </Container>
-            </Container >
+            </Container>
             <InstagramFeed />
             <CopyRight sx={{ mt: 8, mb: 10 }} />
-        </ >
+        </>
     )
 }
 

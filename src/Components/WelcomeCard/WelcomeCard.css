@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+/* ...existing styles... */
+@media (max-width: 600px) {
+    .welcome-section {
+
+        padding: 16px 4vw !important;
+        border-radius: 5px !important;
+        width: 90vw !important;
+        max-width: none !important;
+        box-sizing: border-box !important;
+        word-break: break-word !important;
+        margin: 8px auto !important;
+
+    }
+
+    .welcome-title {
+        font-size: 1.3rem !important;
+        margin-bottom: 0px !important;
+    }
+
+    .welcome-body {
+        font-size: 0.95rem !important;
+        margin-top: 16px !important;
+        margin-bottom: 16px !important;
+    }
+
+    .welcome-icon {
+        font-size: 2rem !important;
+        margin-bottom: 10px !important;
+    }
+
+    .welcome-divider {
+        width: 40px !important;
+        height: 3px !important;
+        margin: 16px auto !important;
+    }
+}
+
+.welcome-section {
+    border-radius: 24px;
+    box-shadow: none;
+    padding: 40px 24px;
+    margin: 40px auto;
+    max-width: 800px;
+    text-align: center;
+    color: #fff;
+    position: relative;
+}
+
+.welcome-section::after {
+    content: "";
+    position: absolute;
+    inset: -8px;
+    border-radius: 32px;
+    pointer-events: none;
+    z-index: 0;
+    box-shadow: 0 0 16px 4px #fff;
+    opacity: 0.15;
+    animation: welcomeGlowBoxShadow 2.5s ease-in-out infinite;
+}
+
+@keyframes welcomeGlowBoxShadow {
+
+    0%,
+    100% {
+        opacity: 0.15;
+        box-shadow: 0 0 16px 4px #fff;
+    }
+
+    50% {
+        opacity: 0.3;
+        box-shadow: 0 0 24px 8px #fff;
+    }
+}
+
+/* Normal title styles only (no nested rules/animations here) */
+.welcome-title {
+    background-color: transparent;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    letter-spacing: 1px;
+    font-family: 'Pacifico';
+}
+
+.welcome-icon {
+    background-color: transparent;
+    font-size: 3rem;
+    margin-bottom: 16px;
+    color: #ffb347;
+}
+
+.welcome-divider {
+    width: 60px;
+    height: 4px;
+    background: #ffb347;
+    border-radius: 2px;
+    margin: 24px auto;
+}
+
+.welcome-body {
+    background-color: transparent;
+    font-size: 1.2rem;
+    margin-bottom: 24px;
+    color: #e0e0e0;
+}
