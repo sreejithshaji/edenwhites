@@ -13,7 +13,6 @@ import CategoryHeading from './/CategoryHeading/CategoryHeading'
 import mockData from '../../Constants/products'
 import styles from './HomePage.module.css';
 import InstagramFeed from '../../Components/InstagramFeed/InstagramFeed'
-import WelcomeCard from '../../Components/WelcomeCard/WelcomeCard'
 const HomePage = () => {
     const { setCart } = useContext(ContextFunction)
     let authToken = localStorage.getItem('Authorization')
@@ -53,9 +52,6 @@ const HomePage = () => {
                     <Carousel />
                 </Box>
 
-                <div style={{ marginTop: 20 }} >
-                    <WelcomeCard />
-                </div>
 
                 {/* give a heading named our categories  */}
                 <Typography variant="h4" align="center" gutterBottom style={{ color: 'red', marginTop: 20 }}>
@@ -77,7 +73,7 @@ const HomePage = () => {
                     }
                 </Container>
             </Container>
-            <InstagramFeed />
+            {/* <InstagramFeed /> */}
             <CopyRight sx={{ mt: 8, mb: 10 }} />
         </>
     )
